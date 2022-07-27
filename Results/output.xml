@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.7.3 on win32)" generated="20220728 02:15:27.048" rpa="false" schemaversion="3">
+<suite id="s1" name="Login Logout" source="C:\Users\Kailash.Prabhu\Desktop\Practice\Test_Suites\Login_Logout.robot">
+<test id="s1-t1" name="TC1 - Site accessibility" line="18">
+<kw name="Start" library="params" type="SETUP">
+<arg>${BROWSER}</arg>
+<arg>${URL}</arg>
+<doc>Creates instance of browser/driver</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220728 02:15:27.223" level="INFO">Opening browser 'chrome' to base url 'https://landmark.taqtics.co:3000/'.</msg>
+<status status="PASS" starttime="20220728 02:15:27.222" endtime="20220728 02:15:37.184"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220728 02:15:37.186" endtime="20220728 02:15:37.298"/>
+</kw>
+<status status="PASS" starttime="20220728 02:15:27.222" endtime="20220728 02:15:37.299"/>
+</kw>
+<kw name="Verify Logo On Login Page" library="LoginPage">
+<doc>Verifies if logo is found on login page</doc>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<arg>/static/media/authLogo.c88a7b32.svg</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20220728 02:15:37.313" level="INFO">Current page contains image '/static/media/authLogo.c88a7b32.svg'.</msg>
+<status status="PASS" starttime="20220728 02:15:37.299" endtime="20220728 02:15:37.313"/>
+</kw>
+<status status="PASS" starttime="20220728 02:15:37.299" endtime="20220728 02:15:37.313"/>
+</kw>
+<kw name="Stop" library="params" type="TEARDOWN">
+<doc>Kills all instance of browser/driver</doc>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220728 02:15:37.314" endtime="20220728 02:15:39.700"/>
+</kw>
+<status status="PASS" starttime="20220728 02:15:37.314" endtime="20220728 02:15:39.701"/>
+</kw>
+<doc>Site Accessibility Test</doc>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20220728 02:15:27.221" endtime="20220728 02:15:39.703"/>
+</test>
+<test id="s1-t2" name="TC2 - Successful Login" line="23">
+<kw name="Start" library="params" type="SETUP">
+<arg>${BROWSER}</arg>
+<arg>${URL}</arg>
+<doc>Creates instance of browser/driver</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220728 02:15:39.710" level="INFO">Opening browser 'chrome' to base url 'https://landmark.taqtics.co:3000/'.</msg>
+<status status="PASS" starttime="20220728 02:15:39.709" endtime="20220728 02:15:48.354"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220728 02:15:48.354" endtime="20220728 02:15:48.478"/>
+</kw>
+<status status="PASS" starttime="20220728 02:15:39.708" endtime="20220728 02:15:48.478"/>
+</kw>
+<kw name="Enter Text Into Email Field" library="LoginPage">
+<arg>${LOGIN["email"]}</arg>
+<doc>Enters text into email field on login page</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:email</arg>
+<arg>${input_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220728 02:15:48.479" level="INFO">Typing text 'TestCandidate@taqtics.co' into text field 'id:email'.</msg>
+<status status="PASS" starttime="20220728 02:15:48.479" endtime="20220728 02:15:48.619"/>
+</kw>
+<status status="PASS" starttime="20220728 02:15:48.478" endtime="20220728 02:15:48.620"/>
+</kw>
+<kw name="Enter Text Into Password Field" library="LoginPage">
+<arg>${LOGIN["password"]}</arg>
+<doc>Enters text into password field on login page</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${input_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220728 02:15:48.621" level="INFO">Typing text 'candidate45678' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20220728 02:15:48.621" endtime="20220728 02:15:48.710"/>
+</kw>
+<status status="PASS" starttime="20220728 02:15:48.620" endtime="20220728 02:15:48.710"/>
+</kw>
+<kw name="Click Login Button" library="LoginPage">
+<doc>Clicks login button</doc>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>tag:button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220728 02:15:48.711" level="INFO">Clicking button 'tag:button'.</msg>
+<status status="PASS" starttime="20220728 02:15:48.711" endtime="20220728 02:15:48.758"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220728 02:15:50.771" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220728 02:15:48.758" endtime="20220728 02:15:50.771"/>
+</kw>
+<status status="PASS" starttime="20220728 02:15:48.711" endtime="20220728 02:15:50.771"/>
+</kw>
+<kw name="Verify Search Field" library="LogoutPage">
+<doc>Verifies if Search field is accessible</doc>
+<kw name="Page Should Contain Textfield" library="SeleniumLibrary">
+<arg>class:ant-input</arg>
+<doc>Verifies text field ``locator`` is found from current page.</doc>
+<msg timestamp="20220728 02:15:50.792" level="INFO">Current page contains text field 'class:ant-input'.</msg>
+<status status="PASS" starttime="20220728 02:15:50.772" endtime="20220728 02:15:50.792"/>
+</kw>
+<status status="PASS" starttime="20220728 02:15:50.772" endtime="20220728 02:15:50.792"/>
+</kw>
+<kw name="Stop" library="params" type="TEARDOWN">
+<doc>Kills all instance of browser/driver</doc>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220728 02:15:50.793" endtime="20220728 02:15:53.226"/>
+</kw>
+<status status="PASS" starttime="20220728 02:15:50.792" endtime="20220728 02:15:53.227"/>
+</kw>
+<doc>Logs into the application</doc>
+<tag>Login</tag>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220728 02:15:39.706" endtime="20220728 02:15:53.227"/>
+</test>
+<test id="s1-t3" name="TC3 - Invalid Email" line="31">
+<kw name="Start" library="params" type="SETUP">
+<arg>${BROWSER}</arg>
+<arg>${URL}</arg>
+<doc>Creates instance of browser/driver</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220728 02:15:53.235" level="INFO">Opening browser 'chrome' to base url 'https://landmark.taqtics.co:3000/'.</msg>
+<status status="PASS" starttime="20220728 02:15:53.234" endtime="20220728 02:15:59.917"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220728 02:15:59.917" endtime="20220728 02:16:00.042"/>
+</kw>
+<status status="PASS" starttime="20220728 02:15:53.233" endtime="20220728 02:16:00.042"/>
+</kw>
+<kw name="Enter Text Into Email Field" library="LoginPage">
+<arg>${INVALID_LOGIN["email"]}</arg>
+<doc>Enters text into email field on login page</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:email</arg>
+<arg>${input_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220728 02:16:00.044" level="INFO">Typing text 'TestCandidate@taqtics.c' into text field 'id:email'.</msg>
+<status status="PASS" starttime="20220728 02:16:00.044" endtime="20220728 02:16:00.176"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:00.043" endtime="20220728 02:16:00.176"/>
+</kw>
+<kw name="Verify Invalid Credentials Alert" library="LoginPage">
+<doc>Verifies ivalid email alert notification</doc>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>class:ant-form-item-explain-error</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220728 02:16:00.187" level="INFO">Current page contains element 'class:ant-form-item-explain-error'.</msg>
+<status status="PASS" starttime="20220728 02:16:00.177" endtime="20220728 02:16:00.187"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:00.176" endtime="20220728 02:16:00.187"/>
+</kw>
+<kw name="Stop" library="params" type="TEARDOWN">
+<doc>Kills all instance of browser/driver</doc>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220728 02:16:00.188" endtime="20220728 02:16:02.592"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:00.187" endtime="20220728 02:16:02.593"/>
+</kw>
+<doc>Tries to login with invalid email</doc>
+<tag>Login</tag>
+<tag>Negative</tag>
+<status status="PASS" starttime="20220728 02:15:53.231" endtime="20220728 02:16:02.593"/>
+</test>
+<test id="s1-t4" name="TC4 - Valid Unregistered Email" line="37">
+<kw name="Start" library="params" type="SETUP">
+<arg>${BROWSER}</arg>
+<arg>${URL}</arg>
+<doc>Creates instance of browser/driver</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220728 02:16:02.602" level="INFO">Opening browser 'chrome' to base url 'https://landmark.taqtics.co:3000/'.</msg>
+<status status="PASS" starttime="20220728 02:16:02.602" endtime="20220728 02:16:13.540"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220728 02:16:13.540" endtime="20220728 02:16:13.658"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:02.599" endtime="20220728 02:16:13.658"/>
+</kw>
+<kw name="Enter Text Into Email Field" library="LoginPage">
+<arg>${UNREGISTERED_LOGIN["email"]}</arg>
+<doc>Enters text into email field on login page</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:email</arg>
+<arg>${input_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220728 02:16:13.662" level="INFO">Typing text 'TestCandidate@taqtics.com' into text field 'id:email'.</msg>
+<status status="PASS" starttime="20220728 02:16:13.661" endtime="20220728 02:16:13.807"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:13.659" endtime="20220728 02:16:13.808"/>
+</kw>
+<kw name="Enter Text Into Password Field" library="LoginPage">
+<arg>${UNREGISTERED_LOGIN["password"]}</arg>
+<doc>Enters text into password field on login page</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${input_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220728 02:16:13.811" level="INFO">Typing text 'candidate45678' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20220728 02:16:13.810" endtime="20220728 02:16:13.898"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:13.808" endtime="20220728 02:16:13.898"/>
+</kw>
+<kw name="Click Login Button" library="LoginPage">
+<doc>Clicks login button</doc>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>tag:button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220728 02:16:13.900" level="INFO">Clicking button 'tag:button'.</msg>
+<status status="PASS" starttime="20220728 02:16:13.900" endtime="20220728 02:16:13.946"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220728 02:16:15.960" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220728 02:16:13.946" endtime="20220728 02:16:15.960"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:13.899" endtime="20220728 02:16:15.961"/>
+</kw>
+<kw name="Verify Not Found Email alert" library="LoginPage">
+<doc>Verifies Un-Registered email alert notification</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css:.ant-message-notice-content</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220728 02:16:15.963" endtime="20220728 02:16:15.992"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:15.962" endtime="20220728 02:16:15.992"/>
+</kw>
+<kw name="Stop" library="params" type="TEARDOWN">
+<doc>Kills all instance of browser/driver</doc>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220728 02:16:15.993" endtime="20220728 02:16:18.371"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:15.993" endtime="20220728 02:16:18.371"/>
+</kw>
+<doc>Tries to login with valid email which isn't registered/found in DB</doc>
+<tag>Login</tag>
+<tag>Negative</tag>
+<status status="PASS" starttime="20220728 02:16:02.597" endtime="20220728 02:16:18.371"/>
+</test>
+<test id="s1-t5" name="TC5 - Empty Password Field" line="45">
+<kw name="Start" library="params" type="SETUP">
+<arg>${BROWSER}</arg>
+<arg>${URL}</arg>
+<doc>Creates instance of browser/driver</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220728 02:16:18.377" level="INFO">Opening browser 'chrome' to base url 'https://landmark.taqtics.co:3000/'.</msg>
+<status status="PASS" starttime="20220728 02:16:18.376" endtime="20220728 02:16:26.716"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220728 02:16:26.716" endtime="20220728 02:16:26.836"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:18.375" endtime="20220728 02:16:26.836"/>
+</kw>
+<kw name="Enter Text Into Email Field" library="LoginPage">
+<arg>${LOGIN["email"]}</arg>
+<doc>Enters text into email field on login page</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:email</arg>
+<arg>${input_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220728 02:16:26.838" level="INFO">Typing text 'TestCandidate@taqtics.co' into text field 'id:email'.</msg>
+<status status="PASS" starttime="20220728 02:16:26.838" endtime="20220728 02:16:26.984"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:26.837" endtime="20220728 02:16:26.984"/>
+</kw>
+<kw name="Click Login Button" library="LoginPage">
+<doc>Clicks login button</doc>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>tag:button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220728 02:16:26.985" level="INFO">Clicking button 'tag:button'.</msg>
+<status status="PASS" starttime="20220728 02:16:26.985" endtime="20220728 02:16:27.034"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220728 02:16:29.044" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220728 02:16:27.034" endtime="20220728 02:16:29.044"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:26.985" endtime="20220728 02:16:29.044"/>
+</kw>
+<kw name="Verify Invalid Credentials Alert" library="LoginPage">
+<doc>Verifies ivalid email alert notification</doc>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>class:ant-form-item-explain-error</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220728 02:16:29.053" level="INFO">Current page contains element 'class:ant-form-item-explain-error'.</msg>
+<status status="PASS" starttime="20220728 02:16:29.045" endtime="20220728 02:16:29.053"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:29.045" endtime="20220728 02:16:29.053"/>
+</kw>
+<kw name="Stop" library="params" type="TEARDOWN">
+<doc>Kills all instance of browser/driver</doc>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220728 02:16:29.054" endtime="20220728 02:16:31.453"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:29.053" endtime="20220728 02:16:31.453"/>
+</kw>
+<doc>Tries to login with empty password field</doc>
+<tag>Login</tag>
+<tag>Negative</tag>
+<status status="PASS" starttime="20220728 02:16:18.375" endtime="20220728 02:16:31.454"/>
+</test>
+<test id="s1-t6" name="TC6 - Invalid Password" line="52">
+<kw name="Start" library="params" type="SETUP">
+<arg>${BROWSER}</arg>
+<arg>${URL}</arg>
+<doc>Creates instance of browser/driver</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220728 02:16:31.462" level="INFO">Opening browser 'chrome' to base url 'https://landmark.taqtics.co:3000/'.</msg>
+<status status="PASS" starttime="20220728 02:16:31.462" endtime="20220728 02:16:39.544"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220728 02:16:39.544" endtime="20220728 02:16:39.659"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:31.460" endtime="20220728 02:16:39.659"/>
+</kw>
+<kw name="Enter Text Into Email Field" library="LoginPage">
+<arg>${LOGIN["email"]}</arg>
+<doc>Enters text into email field on login page</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:email</arg>
+<arg>${input_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220728 02:16:39.661" level="INFO">Typing text 'TestCandidate@taqtics.co' into text field 'id:email'.</msg>
+<status status="PASS" starttime="20220728 02:16:39.661" endtime="20220728 02:16:39.812"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:39.660" endtime="20220728 02:16:39.813"/>
+</kw>
+<kw name="Enter Text Into Password Field" library="LoginPage">
+<arg>${INVALID_LOGIN["password"]}</arg>
+<doc>Enters text into password field on login page</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${input_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220728 02:16:39.815" level="INFO">Typing text 'candidate45' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20220728 02:16:39.814" endtime="20220728 02:16:39.891"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:39.813" endtime="20220728 02:16:39.891"/>
+</kw>
+<kw name="Click Login Button" library="LoginPage">
+<doc>Clicks login button</doc>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>tag:button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220728 02:16:39.893" level="INFO">Clicking button 'tag:button'.</msg>
+<status status="PASS" starttime="20220728 02:16:39.892" endtime="20220728 02:16:39.940"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220728 02:16:41.953" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220728 02:16:39.940" endtime="20220728 02:16:41.954"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:39.892" endtime="20220728 02:16:41.954"/>
+</kw>
+<kw name="Verify Not Found Email alert" library="LoginPage">
+<doc>Verifies Un-Registered email alert notification</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css:.ant-message-notice-content</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220728 02:16:41.955" endtime="20220728 02:16:41.968"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:41.954" endtime="20220728 02:16:41.968"/>
+</kw>
+<kw name="Stop" library="params" type="TEARDOWN">
+<doc>Kills all instance of browser/driver</doc>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220728 02:16:41.969" endtime="20220728 02:16:44.378"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:41.969" endtime="20220728 02:16:44.379"/>
+</kw>
+<doc>Tries to login with invalid password</doc>
+<tag>Login</tag>
+<tag>Negative</tag>
+<status status="PASS" starttime="20220728 02:16:31.459" endtime="20220728 02:16:44.380"/>
+</test>
+<test id="s1-t7" name="TC7 - Successful Logout" line="60">
+<kw name="Start" library="params" type="SETUP">
+<arg>${BROWSER}</arg>
+<arg>${URL}</arg>
+<doc>Creates instance of browser/driver</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220728 02:16:44.387" level="INFO">Opening browser 'chrome' to base url 'https://landmark.taqtics.co:3000/'.</msg>
+<status status="PASS" starttime="20220728 02:16:44.387" endtime="20220728 02:16:51.329"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220728 02:16:51.329" endtime="20220728 02:16:51.445"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:44.386" endtime="20220728 02:16:51.445"/>
+</kw>
+<kw name="Enter Text Into Email Field" library="LoginPage">
+<arg>${LOGIN["email"]}</arg>
+<doc>Enters text into email field on login page</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:email</arg>
+<arg>${input_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220728 02:16:51.448" level="INFO">Typing text 'TestCandidate@taqtics.co' into text field 'id:email'.</msg>
+<status status="PASS" starttime="20220728 02:16:51.447" endtime="20220728 02:16:51.597"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:51.446" endtime="20220728 02:16:51.597"/>
+</kw>
+<kw name="Enter Text Into Password Field" library="LoginPage">
+<arg>${LOGIN["password"]}</arg>
+<doc>Enters text into password field on login page</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${input_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220728 02:16:51.599" level="INFO">Typing text 'candidate45678' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20220728 02:16:51.599" endtime="20220728 02:16:51.696"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:51.597" endtime="20220728 02:16:51.696"/>
+</kw>
+<kw name="Click Login Button" library="LoginPage">
+<doc>Clicks login button</doc>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>tag:button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220728 02:16:51.698" level="INFO">Clicking button 'tag:button'.</msg>
+<status status="PASS" starttime="20220728 02:16:51.698" endtime="20220728 02:16:51.747"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220728 02:16:53.748" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220728 02:16:51.747" endtime="20220728 02:16:53.748"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:51.697" endtime="20220728 02:16:53.748"/>
+</kw>
+<kw name="Verify Search Field" library="LogoutPage">
+<doc>Verifies if Search field is accessible</doc>
+<kw name="Page Should Contain Textfield" library="SeleniumLibrary">
+<arg>class:ant-input</arg>
+<doc>Verifies text field ``locator`` is found from current page.</doc>
+<msg timestamp="20220728 02:16:53.774" level="INFO">Current page contains text field 'class:ant-input'.</msg>
+<status status="PASS" starttime="20220728 02:16:53.750" endtime="20220728 02:16:53.774"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:53.749" endtime="20220728 02:16:53.774"/>
+</kw>
+<kw name="Click Settings Dropdown" library="LogoutPage">
+<doc>Enables dropdown which consist logout/profile option</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>class:ant-dropdown-trigger</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220728 02:16:53.775" level="INFO">Clicking element 'class:ant-dropdown-trigger'.</msg>
+<status status="PASS" starttime="20220728 02:16:53.775" endtime="20220728 02:16:53.816"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:53.774" endtime="20220728 02:16:53.816"/>
+</kw>
+<kw name="Click Logout" library="LogoutPage">
+<doc>Clicks Logout option</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xPath://li[@class="ant-dropdown-menu-item"][2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220728 02:16:53.818" level="INFO">Clicking element 'xPath://li[@class="ant-dropdown-menu-item"][2]'.</msg>
+<status status="PASS" starttime="20220728 02:16:53.817" endtime="20220728 02:16:54.308"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220728 02:16:56.314" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220728 02:16:54.308" endtime="20220728 02:16:56.314"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:53.817" endtime="20220728 02:16:56.314"/>
+</kw>
+<kw name="Verify Logo On Login Page" library="LoginPage">
+<doc>Verifies if logo is found on login page</doc>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<arg>/static/media/authLogo.c88a7b32.svg</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20220728 02:16:56.336" level="INFO">Current page contains image '/static/media/authLogo.c88a7b32.svg'.</msg>
+<status status="PASS" starttime="20220728 02:16:56.316" endtime="20220728 02:16:56.336"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:56.316" endtime="20220728 02:16:56.336"/>
+</kw>
+<kw name="Stop" library="params" type="TEARDOWN">
+<doc>Kills all instance of browser/driver</doc>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220728 02:16:56.337" endtime="20220728 02:16:58.728"/>
+</kw>
+<status status="PASS" starttime="20220728 02:16:56.337" endtime="20220728 02:16:58.728"/>
+</kw>
+<doc>Logs out of the application</doc>
+<tag>Logout</tag>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220728 02:16:44.384" endtime="20220728 02:16:58.730"/>
+</test>
+<doc>Test Suite for Login and Logout feature</doc>
+<status status="PASS" starttime="20220728 02:15:27.055" endtime="20220728 02:16:58.733"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="5" fail="0" skip="0">Login</stat>
+<stat pass="1" fail="0" skip="0">Logout</stat>
+<stat pass="4" fail="0" skip="0">Negative</stat>
+<stat pass="2" fail="0" skip="0">Positive</stat>
+<stat pass="1" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="7" fail="0" skip="0" id="s1" name="Login Logout">Login Logout</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
