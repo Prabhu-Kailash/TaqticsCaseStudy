@@ -11,7 +11,7 @@ Test Setup    Start    ${BROWSER}    ${URL}
 Test Teardown    Stop
 
 *** Variables ***
-${BROWSER} =    chrome    # Supports all browser i.e., headlesschrome, chrome, firefox etc.,
+${BROWSER} =    headlesschrome    # Supports all browser i.e., headlesschrome, chrome, firefox etc.,
 ${URL} =    https://landmark.taqtics.co:3000/
 
 *** Test Cases ***
